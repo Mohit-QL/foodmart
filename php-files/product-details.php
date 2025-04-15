@@ -1,5 +1,4 @@
 <?php
-$id = intval($_GET['id']);
 $conn = new mysqli("localhost", "root", "", "foodmart");
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -176,6 +175,7 @@ if (session_status() === PHP_SESSION_NONE) {
             border: 1px solid #ccc;
             background-color: rgba(255, 255, 255, 0.7);
             z-index: 10;
+            /* background-repeat: no-repeat; */
         }
 
         .thumb-img {
@@ -198,6 +198,56 @@ if (session_status() === PHP_SESSION_NONE) {
 
         .main-image {
             cursor: zoom-in;
+        }
+
+        .badge {
+            background-color: red !important;
+            color: white;
+            padding: 5px;
+            font-size: 12px;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+        }
+
+        .custom-width {
+            width: 250px !important;
+        }
+
+        .profile {
+            background-color: #e6f3fa;
+            color: black;
+            width: 250px;
+            height: 100px;
+            border: 1px solid #FFC43F;
+            inset: 14px auto auto 0px !important;
+        }
+
+        .profile a {
+            text-decoration: none;
+        }
+
+        .category-box {
+            width: 150px;
+            height: 170px;
+            background-color: #f8f8f8;
+            border-radius: 12px;
+            padding: 20px 10px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
         }
     </style>
 </head>
@@ -373,11 +423,38 @@ if (session_status() === PHP_SESSION_NONE) {
                         </li>
 
 
-                        <li>
-                            <a href="#" class="rounded-circle bg-light p-2 mx-1">
+                        <!--<li>
+                                <a href="#" class="rounded-circle bg-light p-2 mx-1">
+                                    <svg width="24" height="24" viewBox="0 0 24 24">
+                                        <use xlink:href="#heart"></use>
+                                    </svg>
+                                </a>
+                        </li> -->
+
+                        <li class="position-relative">
+                            <a href="./wishlist.php" class="rounded-circle bg-light p-2 mx-1 position-relative">
                                 <svg width="24" height="24" viewBox="0 0 24 24">
                                     <use xlink:href="#heart"></use>
                                 </svg>
+                                <?php
+                                include './db.php';
+
+                                $wishlist_count = 0;
+                                if (isset($_SESSION['user_id'])) {
+                                    $uid = $_SESSION['user_id'];
+                                    $stmt = $conn->prepare("SELECT COUNT(*) AS total FROM wishlist WHERE user_id = ?");
+                                    $stmt->bind_param("i", $uid);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+                                    $data = $result->fetch_assoc();
+                                    $wishlist_count = $data['total'];
+                                }
+                                ?>
+                                <?php if ($wishlist_count > 0): ?>
+                                    <span class=" badge rounded-pill">
+                                        <?= $wishlist_count ?>
+                                    </span>
+                                <?php endif; ?>
                             </a>
                         </li>
                         <li class="d-lg-none">
@@ -548,7 +625,11 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
     <script>
         function changeQty(val) {
             const input = document.getElementById('qtyInput');
@@ -574,7 +655,7 @@ if (session_status() === PHP_SESSION_NONE) {
             const x = e.clientX - left;
             const y = e.clientY - top;
 
-            const zoomFactor = 2; 
+            const zoomFactor = 2;
             const zoomWidth = width * zoomFactor;
             const zoomHeight = height * zoomFactor;
 

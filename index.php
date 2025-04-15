@@ -29,6 +29,17 @@ if (session_status() === PHP_SESSION_NONE) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
+    .badge {
+      background-color: red !important;
+      color: white;
+      padding: 5px ;
+      font-size: 12px;
+      border-radius: 50%;
+      position: absolute;
+      top: -5px;
+      right: -10px;
+    }
+
     .custom-width {
       width: 250px !important;
     }
@@ -241,13 +252,41 @@ if (session_status() === PHP_SESSION_NONE) {
             </li>
 
 
-            <li>
+            <!-- <li>
               <a href="#" class="rounded-circle bg-light p-2 mx-1">
                 <svg width="24" height="24" viewBox="0 0 24 24">
                   <use xlink:href="#heart"></use>
                 </svg>
               </a>
+            </li> -->
+
+            <li class="position-relative">
+              <a href="./php-files/wishlist.php" class="rounded-circle bg-light p-2 mx-1 position-relative">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#heart"></use>
+                </svg>
+                <?php
+                include './php-files/db.php';
+
+                $wishlist_count = 0;
+                if (isset($_SESSION['user_id'])) {
+                  $uid = $_SESSION['user_id'];
+                  $stmt = $conn->prepare("SELECT COUNT(*) AS total FROM wishlist WHERE user_id = ?");
+                  $stmt->bind_param("i", $uid);
+                  $stmt->execute();
+                  $result = $stmt->get_result();
+                  $data = $result->fetch_assoc();
+                  $wishlist_count = $data['total'];
+                }
+                ?>
+                <?php if ($wishlist_count > 0): ?>
+                  <span class=" badge rounded-pill">
+                    <?= $wishlist_count ?>
+                  </span>
+                <?php endif; ?>
+              </a>
             </li>
+
             <li class="d-lg-none">
               <a href="#" class="rounded-circle bg-light p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
                 <svg width="24" height="24" viewBox="0 0 24 24">
@@ -559,14 +598,25 @@ if (session_status() === PHP_SESSION_NONE) {
                       <div class="col mb-4">
                         <div class="product-item position-relative">
                           <?php if ($discount > 0): ?>
-                            <span class="badge bg-success position-absolute m-3">-<?= round($discount) ?>%</span>
+                            <!-- <span class="badge bg-success position-absolute m-3">-<?= round($discount) ?>%</span> -->
                           <?php endif; ?>
 
-                          <a href="#" class="btn-wishlist position-absolute top-0 end-0 m-3">
-                            <svg width="24" height="24">
-                              <use xlink:href="#heart"></use>
-                            </svg>
-                          </a>
+                          <?php if (isset($_SESSION['user_id'])): ?>
+                            <a href="./php-files/add_to_wishlist.php?pid=<?= $product['id'] ?>" class="btn-wishlist position-absolute top-0 end-0 m-3">
+                              <svg width="24" height="24">
+                                <use xlink:href="#heart"></use>
+                              </svg>
+                            </a>
+                          <?php else: ?>
+                            <a href="login.php" class="btn-wishlist position-absolute top-0 end-0 m-3" title="Login to add to wishlist">
+                              <svg width="24" height="24">
+                                <use xlink:href="#heart"></use>
+                              </svg>
+                            </a>
+                          <?php endif; ?>
+
+
+
                           <figure>
                             <a href="./php-files/product-details.php/?id=<?= $product['id'] ?>" title="<?= htmlspecialchars($product['product_name']) ?>">
                               <img src="http://localhost/foodmart/admin/static/<?= $product_image ?>" class="tab-image" alt="<?= htmlspecialchars($product['product_name']) ?>" style="height: 150px; object-fit: contain;">
