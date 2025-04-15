@@ -2,7 +2,6 @@
 session_start();
 $conn = new mysqli("localhost", "root", "", "foodmart");
 
-// Redirect if not admin
 if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     header("Location: ../index.php");
     exit;

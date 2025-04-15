@@ -53,7 +53,6 @@ if (isset($_SESSION['user_role']) && $_SESSION['user_role'] !== 'admin') {
                     </li>
 
                     <?php if (isset($_SESSION['user_name'])): ?>
-                        <!-- Welcome and Logout for logged-in user -->
                         <li class="sidebar-item">
                             <a class="sidebar-link d-flex" href="#" style="cursor: default;">
                                 <div><i class="align-middle" data-feather="user"></i></div>
@@ -74,12 +73,17 @@ if (isset($_SESSION['user_role']) && $_SESSION['user_role'] !== 'admin') {
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="products.php">
-                                <i class="align-middle" data-feather="users"></i>
+                                <i class="align-middle" data-feather="list"></i>
                                 <span class="align-middle">Products</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="category.php">
+                                <i class="align-middle" data-feather="list"></i>
+                                <span class="align-middle">Categories</span>
+                            </a>
+                        </li>
                     <?php else: ?>
-                        <!-- Show these only if NOT logged in -->
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="sign-in.php">
                                 <i class="align-middle" data-feather="log-in"></i>

@@ -20,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $role  = mysqli_real_escape_string($conn, $_POST['role']);
 
-    // Optional image update logic
     if (!empty($_FILES['image']['name'])) {
         $image_name = basename($_FILES["image"]["name"]);
         $target_file = "uploads/" . $image_name;
