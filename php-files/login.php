@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, name, password, image, email FROM users WHERE email = ?");
 
     if (!$stmt) {
         die("SQL Error: " . $conn->error);
@@ -23,11 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $username, $hashed_password);
+        $stmt->bind_result($id, $username, $hashed_password, $user_image, $user_email);
         $stmt->fetch();
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $id;
             $_SESSION['user_name'] = $username;
+            $_SESSION['user_image'] = $user_image ?? 'default.png';
+            $_SESSION['user_email'] = $user_email;
+
             header("Location: ../index.php");
             exit;
         } else {

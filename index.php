@@ -2,6 +2,26 @@
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
+if (!isset($_SESSION['csrf_token'])) {
+  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+include './php-files/db.php';
+
+$user_id = $_SESSION['user_id'] ?? 0;
+$cart_items = [];
+$total_price = 0;
+
+if ($user_id) {
+  $stmt = $conn->prepare("SELECT * FROM cart WHERE user_id = ?");
+  $stmt->bind_param("i", $user_id);
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  while ($row = $result->fetch_assoc()) {
+    $cart_items[] = $row;
+    $total_price += $row['price'];
+  }
+}
 
 
 ?>
@@ -24,15 +44,34 @@ if (session_status() === PHP_SESSION_NONE) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/vendor.css">
   <link rel="stylesheet" type="text/css" href="style.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
+    .d-link {
+      padding: 8px 10px;
+    }
+
+    .d-link:hover {
+      background-color: #FCF7EB;
+      padding: 8px 10px;
+      color: #FFC43F;
+    }
+
+    .profile-box {
+      height: fit-content;
+      width: 250px;
+      background-color: white;
+      border: 1px solid gray;
+      border-radius: 10px;
+      padding: 15px;
+    }
+
     .badge {
       background-color: red !important;
       color: white;
-      padding: 5px ;
+      padding: 5px;
       font-size: 12px;
       border-radius: 50%;
       position: absolute;
@@ -143,43 +182,40 @@ if (session_status() === PHP_SESSION_NONE) {
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <div class="order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
-          <span class="badge bg-primary rounded-pill">3</span>
-        </h4>
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Growers cider</h6>
-              <small class="text-body-secondary">Brief description</small>
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-primary">Your cart</span>
+        <span class="bg-primary rounded-pill" style="padding: 5px; font-size:15px; color:white"><?= count($cart_items) ?></span>
+      </h4>
+      <ul class="list-group mb-3" id="cart-list">
+        <?php foreach ($cart_items as $item): ?>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="admin/static/<?= htmlspecialchars($item['image']) ?>" alt="Product" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+              <div class="ms-5 me-3">
+                <h6 class="my-0"><?= htmlspecialchars($item['name']) ?></h6>
+                <small class="text-muted">$<?= number_format($item['price'], 2) ?></small>
+              </div>
             </div>
-            <span class="text-body-secondary">$12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Fresh grapes</h6>
-              <small class="text-body-secondary">Brief description</small>
+            <div class="text-end">
+              <a href="./php-files/remove_cart_item.php?user_id=<?= $user_id ?>&product_id=<?= $item['product_id'] ?>" class="btn btn-sm btn-outline-danger">&times;</a>
             </div>
-            <span class="text-body-secondary">$8</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Heinz tomato ketchup</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
-          </li>
-        </ul>
+        <?php endforeach; ?>
+        <li class="list-group-item d-flex justify-content-between">
+          <!-- <span>Total (USD)</span>
+          <strong>$<?= number_format($total_price, 2) ?></strong> -->
+        </li>
+      </ul>
 
-        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-      </div>
+      <?php if ($cart_items): ?>
+        <a href="./php-files/cart.php" class="w-100 btn btn-primary btn-lg mb-3" >View Cart</a>
+      <?php else: ?>
+        <p class="text-center">Your cart is empty.</p>
+      <?php endif; ?>
+
     </div>
   </div>
+
 
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasSearch" aria-labelledby="Search">
     <div class="offcanvas-header justify-content-center">
@@ -240,14 +276,31 @@ if (session_status() === PHP_SESSION_NONE) {
                   <use xlink:href="#user"></use>
                 </svg>
               </a>
-              <ul class="dropdown-menu p-3 shadow-sm profile">
-                <?php if (isset($_SESSION['user_name'])): ?>
-                  <li class="mb-2">Hello, <strong><?= htmlspecialchars($_SESSION['user_name']) ?></strong></li>
-                  <li><a class="p-0 text-black fw-bold" href="./php-files/logout.php">Logout</a></li>
-                <?php else: ?>
-                  <li><a class="" href="./php-files/register.php">Register</a></li>
-                  <li><a class="" href="./php-files/login.php">Login</a></li>
-                <?php endif; ?>
+
+              <ul class="dropdown-menu p-0 shadow-lg mt-4" style="border-radius: 10px;">
+                <div class="profile-box">
+                  <p class="text-start" style="font-size: 13px;"><span class="" style="color: #FFC43F; font-size:16px">Welcome to foodmart</span><br>
+                    Access account & manage orders</p>
+                  <hr class="w-100 me-4 d-block">
+                  <a href="./php-files/my-profile.php" class="text-decoration-none mb-2 mt-3 d-block d-link">
+                    <li style="font-size: 16px;"><i class="fa-solid fa-user me-3"></i>My Profile</li>
+                  </a>
+                  <a href="" class="text-decoration-none mb-2 d-block d-link">
+                    <li style="font-size: 16px;"><i class="fa-solid fa-bag-shopping me-3"></i>My Orders</li>
+                  </a>
+                  <a href="" class="text-decoration-none mb-3 d-block d-link">
+                    <li style="font-size: 16px;"><i class="fa-solid fa-heart me-3"></i>My wishlist</li>
+                  </a>
+                  <hr class="w-100 mt-4">
+
+                  <?php if (isset($_SESSION['user_name'])): ?>
+                    <!-- <li class="mb-2">Hello, <strong><?= htmlspecialchars($_SESSION['user_name']) ?></strong></li> -->
+                    <li><a class="p-2 text-black fw-bold btn btn-warning w-100" href="./php-files/logout.php" style="border: 1px solid #FFC43F;">Logout</a></li>
+                  <?php else: ?>
+                    <li><a class="p-2 text-black fw-bold btn btn-warning w-100 " href="./php-files/register.php" style="border: 1px solid #FFC43F;">Register</a></li>
+                    <li><a class="p-2 text-black fw-bold btn btn-warning w-100 mt-2" href="./php-files/login.php" style="border: 1px solid #FFC43F;">Login</a></li>
+                  <?php endif; ?>
+                </div>
               </ul>
             </li>
 
@@ -305,10 +358,12 @@ if (session_status() === PHP_SESSION_NONE) {
 
           <div class="cart text-end d-none d-lg-block dropdown">
             <button class="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-              <span class="fs-6 text-muted dropdown-toggle">Your Cart</span>
-              <span class="cart-total fs-5 fw-bold">$1290.00</span>
+              <!-- <span class="fs-6 text-muted dropdown-toggle">Your Cart</span> -->
+              <i class="fa-solid fa-cart-arrow-down text-gray-800" style="font-size: 25px;"></i>
+              <!-- <strong id="cart-total">$<?= number_format($total_price, 2) ?></strong> -->
             </button>
           </div>
+
         </div>
 
       </div>
@@ -643,9 +698,8 @@ if (session_status() === PHP_SESSION_NONE) {
                           </span>
 
                           <div class="d-flex align-items-center justify-content-between">
-                            <a href="add_to_cart.php?product_id=<?= $product['id'] ?>" class="btn btn-warning w-100 mt-3 fw-bold text-black">
-                              Add to Cart <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </a>
+                            <a href="./php-files/add_to_cart.php?product_id=<?= $product['id'] ?>&token=<?= $_SESSION['csrf_token'] ?>" class="btn fw-bold btn-warning w-100 mt-3">Add to Cart</a>
+
                           </div>
                         </div>
                       </div>
@@ -704,7 +758,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             </span>
 
                             <div class="d-flex align-items-center justify-content-between">
-                              <a href="add_to_cart.php?product_id=<?= $product['id'] ?>" class="btn btn-warning w-100 mt-3 fw-bold text-black">Add to Cart <iconify-icon icon="uil:shopping-cart"></iconify-icon></a>
+                              <a href="./php-files/add_to_cart.php?product_id=<?= $product['id'] ?>&token=<?= $_SESSION['csrf_token'] ?>" class="btn btn-warning w-100 mt-3">Add to Cart</a>
                             </div>
                           </div>
                         </div>
@@ -787,7 +841,7 @@ if (session_status() === PHP_SESSION_NONE) {
                   <?php if (!empty($row['old_price']) && $row['old_price'] > $row['product_price']):
                     $discount = round(100 - ($row['product_price'] / $row['old_price'] * 100));
                   ?>
-                    <span class="badge bg-success position-absolute m-3">-<?= $discount ?>%</span>
+                    <!-- <span class="badge bg-success position-absolute m-3">-<?= $discount ?>%</span> -->
                   <?php endif; ?>
 
                   <a href="#" class="btn-wishlist">
@@ -841,8 +895,9 @@ if (session_status() === PHP_SESSION_NONE) {
                   </span>
 
                   <!-- Add to Cart Button -->
-                  <div class="d-flex align-items-center justify-content-between mt-2">
-                    <a href="add_to_cart.php?pid=<?= $row['id'] ?>" class="btn btn-sm btn-warning w-100 mt-3">Add to Cart</a>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <a href="./php-files/add_to_cart.php?product_id=<?= $row['id'] ?>&token=<?= $_SESSION['csrf_token'] ?>" class="btn fw-bold btn-warning w-100 mt-3">Add to Cart</a>
+
                   </div>
                 </div>
               <?php endwhile; ?>
@@ -929,7 +984,7 @@ if (session_status() === PHP_SESSION_NONE) {
                   <?php if (!empty($row['old_price']) && $row['old_price'] > $row['product_price']):
                     $discount = round(100 - ($row['product_price'] / $row['old_price'] * 100));
                   ?>
-                    <span class="badge bg-success position-absolute m-3">-<?= $discount ?>%</span>
+                    <!-- <span class="badge bg-success position-absolute m-3">-<?= $discount ?>%</span> -->
                   <?php endif; ?>
 
                   <a href="#" class="btn-wishlist">
@@ -984,7 +1039,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                   <!-- Add to Cart Button -->
                   <div class="d-flex align-items-center justify-content-between mt-2">
-                    <a href="add_to_cart.php?pid=<?= $row['id'] ?>" class="btn btn-sm btn-warning w-100 mt-3">Add to Cart</a>
+                    <a href="./php-files/add_to_cart.php?product_id=<?= $row['id'] ?>&token=<?= $_SESSION['csrf_token'] ?>" class="btn fw-bold btn-warning w-100 mt-3">Add to Cart</a>
                   </div>
                 </div>
               <?php endwhile; ?>
@@ -1025,7 +1080,7 @@ if (session_status() === PHP_SESSION_NONE) {
                   <?php if (!empty($row['old_price']) && $row['old_price'] > $row['product_price']):
                     $discount = round(100 - ($row['product_price'] / $row['old_price'] * 100));
                   ?>
-                    <span class="badge bg-success position-absolute m-3">-<?= $discount ?>%</span>
+                    <!-- <span class="badge bg-success position-absolute m-3">-<?= $discount ?>%</span> -->
                   <?php endif; ?>
 
                   <a href="#" class="btn-wishlist">
@@ -1080,7 +1135,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                   <!-- Add to Cart Button -->
                   <div class="d-flex align-items-center justify-content-between mt-2">
-                    <a href="add_to_cart.php?pid=<?= $row['id'] ?>" class="btn btn-sm btn-warning w-100 mt-3">Add to Cart</a>
+                    <a href="./php-files/add_to_cart.php?product_id=<?= $row['id'] ?>&token=<?= $_SESSION['csrf_token'] ?>" class="btn fw-bold btn-warning w-100 mt-3">Add to Cart</a>
                   </div>
                 </div>
               <?php endwhile; ?>
@@ -1479,6 +1534,11 @@ if (session_status() === PHP_SESSION_NONE) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+
+
+
+
+
 </body>
 
 </html>

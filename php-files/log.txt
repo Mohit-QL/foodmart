@@ -1,0 +1,315 @@
+{"product_id":"21","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"3"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"4"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"5"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"4"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"5"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"6"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"7"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"8"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"9"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"10"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"11"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"12"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"13"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"14"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"13"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"12"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"11"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"10"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"9"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"8"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"7"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"6"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"5"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"4"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"3"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"21","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"20","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"3"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+[]
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+[]
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"18","quantity":"3"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+[]
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+[]
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+[]
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+[]
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"1","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+{"product_id":"1","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 1, User ID: 1, Quantity: 2
+SQL Query Result: null
+{"product_id":"18","quantity":"4"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 4
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"3"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 3
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"4"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 4
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"5"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 5
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"6"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 6
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"1","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 1, User ID: 1, Quantity: 2
+SQL Query Result: null
+{"product_id":"1","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 1, User ID: 1, Quantity: 2
+SQL Query Result: null
+No matching item found for User ID: 1 and Product ID: 1
+{"product_id":"21","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 21, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"999.00"}
+{"product_id":"15","quantity":"8"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 8
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"19","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 19, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"110.00"}
+{"product_id":"17","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 17, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"648.00"}
+{"product_id":"13","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 13, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"692.00"}
+{"product_id":"20","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 20, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"297.00"}
+{"product_id":"18","quantity":"7"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 7
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"21","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 21, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"999.00"}
+{"product_id":"21","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 21, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"999.00"}
+{"product_id":"18","quantity":"7"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 7
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"6"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 6
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"5"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 5
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"4"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 4
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"3"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 3
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"18","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 18, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"231.00"}
+{"product_id":"20","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 20, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"297.00"}
+{"product_id":"20","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 20, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"297.00"}
+{"product_id":"20","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 20, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"297.00"}
+{"product_id":"20","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 20, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"297.00"}
+{"product_id":"20","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 20, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"297.00"}
+{"product_id":"20","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 20, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"297.00"}
+{"product_id":"20","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 20, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"297.00"}
+{"product_id":"13","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 13, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"692.00"}
+{"product_id":"13","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 13, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"692.00"}
+{"product_id":"17","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 17, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"648.00"}
+{"product_id":"19","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 19, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"110.00"}
+{"product_id":"15","quantity":"7"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 7
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"6"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 6
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"5"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 5
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"4"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 4
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"3"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 3
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"2"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"1"}
+{"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 15, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"269.00"}
