@@ -455,7 +455,6 @@ if ($user_id) {
           <div class="banner-blocks">
 
             <div class="banner-ad large bg-info block-1">
-
               <div class="swiper main-swiper">
                 <div class="swiper-wrapper">
 

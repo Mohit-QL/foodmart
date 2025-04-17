@@ -183,7 +183,7 @@ if ($user_id) {
         .zoom-container {
             position: relative;
             overflow: hidden;
-            width: 100%;
+            width: 76% !important;
             height: 400px;
         }
 
@@ -194,11 +194,15 @@ if ($user_id) {
             left: 0;
             width: 100%;
             height: 100%;
-            border: 1px solid #ccc;
-            background-color: rgba(255, 255, 255, 0.7);
+            /* background-color: white; */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 200%;
+            transition: background-position 0.1s ease;
             z-index: 10;
-            /* background-repeat: no-repeat; */
         }
+
+
 
         .thumb-img {
             width: 70px;
@@ -706,7 +710,7 @@ if ($user_id) {
             font-size: 20px;
         }
     </style>
-    </style>
+
 </head>
 
 <body>
@@ -1050,7 +1054,6 @@ if ($user_id) {
                     $first_image = $image_query->fetch_assoc();
                     ?>
                     <img id="mainImage" src="http://localhost/foodmart/admin/static/<?= $first_image['image_path'] ?>" alt="<?= htmlspecialchars($product['product_name']) ?>" class="img-fluid mb-3 main-image" style="height: 400px; object-fit: contain;">
-                    <div id="zoomResult" class="zoom-result" style="display: none; position: absolute; top: 0; left: 0; overflow: hidden;"></div>
                 </div>
 
                 <div style="margin-top: 15px;">
@@ -1063,7 +1066,8 @@ if ($user_id) {
                 </div>
             </div>
 
-            <div class="col-md-7">
+            <div class="col-md-7 position-relative">
+                <div id="zoomResult" class="zoom-result"></div>
                 <p class="text-uppercase text-muted small"><?= htmlspecialchars($product['category_name']) ?></p>
                 <h2><?= htmlspecialchars($product['product_name']) ?></h2>
 
@@ -1111,41 +1115,38 @@ if ($user_id) {
             }
         }
 
-
+        const mainImage = document.getElementById('mainImage');
         const zoomContainer = document.querySelector('.zoom-container');
         const zoomResult = document.getElementById('zoomResult');
 
-        zoomContainer.addEventListener('mousemove', (e) => {
-            const {
-                left,
-                top,
-                width,
-                height
-            } = mainImage.getBoundingClientRect();
-            const x = e.clientX - left;
-            const y = e.clientY - top;
+        // Set initial styles
+        zoomResult.style.backgroundRepeat = 'no-repeat';
+        zoomResult.style.backgroundSize = 'cover';
+        zoomResult.style.transition = 'background-position 0.1s ease';
 
-            const zoomFactor = 2;
-            const zoomWidth = width * zoomFactor;
-            const zoomHeight = height * zoomFactor;
-
-            const zoomX = (x / width) * zoomWidth - zoomResult.offsetWidth / 2;
-            const zoomY = (y / height) * zoomHeight - zoomResult.offsetHeight / 2;
-
-            zoomResult.style.backgroundImage = `url(${mainImage.src})`;
-            zoomResult.style.backgroundSize = `${zoomWidth}px ${zoomHeight}px`;
-            zoomResult.style.backgroundPosition = `-${zoomX}px -${zoomY}px`;
-
+        zoomContainer.addEventListener('mouseenter', () => {
             zoomResult.style.display = 'block';
+            zoomResult.style.backgroundImage = `url(${mainImage.src})`;
+        });
 
-            zoomResult.style.cursor = 'crosshair';
+        zoomContainer.addEventListener('mousemove', (e) => {
+            const imageRect = mainImage.getBoundingClientRect();
+            const x = e.clientX - imageRect.left;
+            const y = e.clientY - imageRect.top;
+
+            const zoomFactor = 4;
+            const zoomX = (x / imageRect.width) * 100;
+            const zoomY = (y / imageRect.height) * 100;
+
+            zoomResult.style.backgroundSize = `${imageRect.width * zoomFactor}px ${imageRect.height * zoomFactor}px`;
+            zoomResult.style.backgroundPosition = `${zoomX}% ${zoomY}%`;
         });
 
         zoomContainer.addEventListener('mouseleave', () => {
             zoomResult.style.display = 'none';
-            zoomResult.style.cursor = 'default';
         });
     </script>
+
 </body>
 
 </html>
