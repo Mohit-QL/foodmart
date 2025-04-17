@@ -194,7 +194,7 @@ if ($user_id) {
             left: 0;
             width: 100%;
             height: 100%;
-            /* background-color: white; */
+            background-color: white;
             background-repeat: no-repeat;
             background-position: center;
             background-size: 200%;
@@ -572,25 +572,9 @@ if ($user_id) {
             margin: 0;
         }
 
-        .zoom-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 400px;
-        }
+      
 
-        .zoom-result {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 1px solid #ccc;
-            background-color: rgba(255, 255, 255, 0.7);
-            z-index: 10;
-            /* background-repeat: no-repeat; */
-        }
+
 
         .thumb-img {
             width: 70px;
@@ -1134,7 +1118,7 @@ if ($user_id) {
             const x = e.clientX - imageRect.left;
             const y = e.clientY - imageRect.top;
 
-            const zoomFactor = 4;
+            const zoomFactor = 6;
             const zoomX = (x / imageRect.width) * 100;
             const zoomY = (y / imageRect.height) * 100;
 
