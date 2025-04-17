@@ -38,17 +38,17 @@ foreach ($cart_items as $item) {
     $subtotal += $item['price'] * $item['quantity'];
 }
 
-$tax = $subtotal * 0.10;
-
-$discount = 0.00; 
-
+// In cart.php, update the tax calculation part:
+$tax_rate = 0.10; // 10% tax
+$discount = 0;
+$tax = $subtotal * $tax_rate;
 $total = $subtotal + $tax - $discount;
 
+// Format all values
 $formatted_subtotal = number_format($subtotal, 2);
 $formatted_tax = number_format($tax, 2);
 $formatted_discount = number_format($discount, 2);
 $formatted_total = number_format($total, 2);
-
 ?>
 
 
@@ -67,6 +67,17 @@ $formatted_total = number_format($total, 2);
     <link rel="stylesheet" type="text/css" href="Foodmart/style.css">
 
     <style>
+        .p-icon {
+            color: #666;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .p-icon:hover {
+            color: #FFC43F;
+            transform: translateY(-5px);
+        }
+
         .remove a {
             font-size: 12px;
             color: #666 !important;
@@ -325,7 +336,7 @@ $formatted_total = number_format($total, 2);
         }
 
         .badge {
-            background-color: red !important;
+            background-color: #FFC43F !important;
             color: white;
             padding: 5px;
             font-size: 12px;
@@ -499,14 +510,14 @@ $formatted_total = number_format($total, 2);
 
                 <div class="col-sm-4 col-lg-3 text-center text-sm-start">
                     <div class="main-logo">
-                        <a href="./index.php">
+                        <a href="../index.php">
                             <img src="http://localhost/Foodmart/images/logo.png" alt="logo" class="img-fluid">
                         </a>
                     </div>
                 </div>
 
                 <div class="col-sm-12 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
-                    <div class="search-bar row bg-light p-2 my-2 rounded-4">
+                    <!-- <div class="search-bar row bg-light p-2 my-2 rounded-4">
                         <div class="col-11 col-md-7">
                             <form id="search-form" class="text-center" action="./php-files/search.php" method="get">
                                 <input type="text" name="search" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products" />
@@ -519,7 +530,7 @@ $formatted_total = number_format($total, 2);
                                 <path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
                             </svg>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
@@ -540,13 +551,13 @@ $formatted_total = number_format($total, 2);
                                     <p class="text-start" style="font-size: 13px;"><span class="" style="color: #FFC43F; font-size:16px">Welcome to foodmart</span><br>
                                         Access account & manage orders</p>
                                     <hr class="w-100 me-4 d-block">
-                                    <a href="./php-files/my-profile.php" class="text-decoration-none mb-2 mt-3 d-block d-link">
+                                    <a href="../php-files/my-profile.php" class="text-decoration-none mb-2 mt-3 d-block d-link">
                                         <li style="font-size: 16px;"><i class="fa-solid fa-user me-3"></i>My Profile</li>
                                     </a>
-                                    <a href="" class="text-decoration-none mb-2 d-block d-link">
+                                    <!-- <a href="" class="text-decoration-none mb-2 d-block d-link">
                                         <li style="font-size: 16px;"><i class="fa-solid fa-bag-shopping me-3"></i>My Orders</li>
-                                    </a>
-                                    <a href="" class="text-decoration-none mb-3 d-block d-link">
+                                    </a> -->
+                                    <a href="../php-files/wishlist.php" class="text-decoration-none mb-3 d-block d-link">
                                         <li style="font-size: 16px;"><i class="fa-solid fa-heart me-3"></i>My wishlist</li>
                                     </a>
                                     <hr class="w-100 mt-4">
@@ -614,12 +625,7 @@ $formatted_total = number_format($total, 2);
                         </li>
                     </ul>
 
-                    <div class="cart text-end d-none d-lg-block dropdown">
-                        <button class="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                            <span class="fs-6 text-muted dropdown-toggle">Your Cart</span>
-                            <span class="cart-total fs-5 fw-bold">$1290.00</span>
-                        </button>
-                    </div>
+
                 </div>
 
             </div>
@@ -811,20 +817,12 @@ $formatted_total = number_format($total, 2);
                         </div>
 
                         <div class="mt-4">
-                            <button class="btn btn-warning w-100 mb-2">Proceed to Checkout →</button>
+                            <a href="../php-files/paypal-checkout.php" class="btn btn-warning w-100 mb-2">Proceed to Checkout →</a>
                             <a href="../index.php" class="btn btn-outline-secondary w-100">← Continue Shopping</a>
                         </div>
-                        <style>
-                            .p-icon {
-                                color: #666;
-                            }
 
-                            .p-icon:hover {
-                                color: #FFC43F;
-                            }
-                        </style>
                         <div class="text-center mt-3">
-                            <p class="">We Accept</p>
+                            <p>We Accept</p>
                             <i class="bi bi-credit-card-2-front mx-2 fs-4 p-icon"></i>
                             <i class="bi bi-paypal mx-2 fs-4 p-icon"></i>
                             <i class="bi bi-wallet2 mx-2 fs-4 p-icon"></i>
@@ -861,7 +859,7 @@ $formatted_total = number_format($total, 2);
                 input.val(qty);
 
                 $.ajax({
-                    url: '../php-files/update_cart.php', 
+                    url: '../php-files/update_cart.php',
                     method: 'POST',
                     data: {
                         product_id: productId,
@@ -869,7 +867,7 @@ $formatted_total = number_format($total, 2);
                     },
                     dataType: 'json',
                     success: function(response) {
-                        console.log(response); 
+                        console.log(response);
                         if (response.success) {
                             $('#item-total-' + productId).text('$' + response.item_total);
                             $('#grand-total').text('$' + response.grand_total);

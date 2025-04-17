@@ -313,3 +313,23 @@ SQL Query Result: {"product_price":"269.00"}
 {"csrf_token":"d5688ec814eeab41a61130f5d0e75c7254d9d35b9127572c564bb7bdbe57ec9b","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
 Product ID: 15, User ID: 1, Quantity: 1
 SQL Query Result: {"product_price":"269.00"}
+{"product_id":"15","quantity":"2"}
+{"user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com","csrf_token":"78ad3e4ff3fc6f930395117467f7473db1e1cf0338ed0e971222643ef638804b"}
+Product ID: 15, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"269.00"}
+{"product_id":"13","quantity":"2"}
+{"csrf_token":"bc4d5b04fa3dc3897e63a1bb94897e5c1586d0fc5691a4324f1ee00d6c48c957","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 13, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"692.00"}
+{"product_id":"13","quantity":"1"}
+{"csrf_token":"bc4d5b04fa3dc3897e63a1bb94897e5c1586d0fc5691a4324f1ee00d6c48c957","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 13, User ID: 1, Quantity: 1
+SQL Query Result: {"product_price":"692.00"}
+{"product_id":"13","quantity":"2"}
+{"csrf_token":"bc4d5b04fa3dc3897e63a1bb94897e5c1586d0fc5691a4324f1ee00d6c48c957","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 13, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"692.00"}
+{"product_id":"17","quantity":"2"}
+{"csrf_token":"bc4d5b04fa3dc3897e63a1bb94897e5c1586d0fc5691a4324f1ee00d6c48c957","user_id":1,"user_name":"Mohit Mokariya","user_image":"profile.jpg","user_email":"mohit.m@queueloopsolutions.com"}
+Product ID: 17, User ID: 1, Quantity: 2
+SQL Query Result: {"product_price":"648.00"}

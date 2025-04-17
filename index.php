@@ -69,7 +69,7 @@ if ($user_id) {
     }
 
     .badge {
-      background-color: red !important;
+      background-color: #FFC43F !important;
       color: white;
       padding: 5px;
       font-size: 12px;
@@ -208,7 +208,7 @@ if ($user_id) {
       </ul>
 
       <?php if ($cart_items): ?>
-        <a href="./php-files/cart.php" class="w-100 btn btn-primary btn-lg mb-3" >View Cart</a>
+        <a href="./php-files/cart.php" class="w-100 btn btn-primary btn-lg mb-3">View Cart</a>
       <?php else: ?>
         <p class="text-center">Your cart is empty.</p>
       <?php endif; ?>
@@ -247,7 +247,7 @@ if ($user_id) {
         </div>
 
         <div class="col-sm-12 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
-          <div class="search-bar row bg-light p-2 my-2 rounded-4">
+          <!-- <div class="search-bar row bg-light p-2 my-2 rounded-4">
             <div class="col-11 col-md-7">
               <form id="search-form" class="text-center" action="./php-files/search.php" method="get">
                 <input type="text" name="search" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products" />
@@ -260,7 +260,7 @@ if ($user_id) {
                 <path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
               </svg>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
@@ -285,10 +285,10 @@ if ($user_id) {
                   <a href="./php-files/my-profile.php" class="text-decoration-none mb-2 mt-3 d-block d-link">
                     <li style="font-size: 16px;"><i class="fa-solid fa-user me-3"></i>My Profile</li>
                   </a>
-                  <a href="" class="text-decoration-none mb-2 d-block d-link">
+                  <!-- <a href="" class="text-decoration-none mb-2 d-block d-link">
                     <li style="font-size: 16px;"><i class="fa-solid fa-bag-shopping me-3"></i>My Orders</li>
-                  </a>
-                  <a href="" class="text-decoration-none mb-3 d-block d-link">
+                  </a> -->
+                  <a href="./php-files/wishlist.php" class="text-decoration-none mb-3 d-block d-link">
                     <li style="font-size: 16px;"><i class="fa-solid fa-heart me-3"></i>My wishlist</li>
                   </a>
                   <hr class="w-100 mt-4">
@@ -333,7 +333,7 @@ if ($user_id) {
                 }
                 ?>
                 <?php if ($wishlist_count > 0): ?>
-                  <span class=" badge rounded-pill">
+                  <span class="badge rounded-pill">
                     <?= $wishlist_count ?>
                   </span>
                 <?php endif; ?>
@@ -727,12 +727,22 @@ if ($user_id) {
                         <div class="col mb-4">
                           <div class="product-item position-relative">
                             <?php if ($discount > 0): ?>
-                              <span class="badge bg-success position-absolute m-3">-<?= round($discount) ?>%</span>
+                              <!-- <span class="badge bg-success position-absolute m-3">-<?= round($discount) ?>%</span> -->
                             <?php endif; ?>
 
-                            <a href="#" class="btn-wishlist position-absolute top-0 end-0 m-3"><svg width="24" height="24">
-                                <use xlink:href="#heart"></use>
-                              </svg></a>
+                            <?php if (isset($_SESSION['user_id'])): ?>
+                              <a href="./php-files/add_to_wishlist.php?pid=<?= $product['id'] ?>" class="btn-wishlist position-absolute top-0 end-0 m-3">
+                                <svg width="24" height="24">
+                                  <use xlink:href="#heart"></use>
+                                </svg>
+                              </a>
+                            <?php else: ?>
+                              <a href="login.php" class="btn-wishlist position-absolute top-0 end-0 m-3" title="Login to add to wishlist">
+                                <svg width="24" height="24">
+                                  <use xlink:href="#heart"></use>
+                                </svg>
+                              </a>
+                            <?php endif; ?>
 
                             <figure>
                               <a href="./php-files/product-details.php/?id=<?= $product['id'] ?>" title="<?= htmlspecialchars($product['product_name']) ?>">

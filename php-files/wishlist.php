@@ -92,7 +92,27 @@ if ($user_id) {
 }
 
 
+$categories = $conn->query("
+  SELECT c.id, c.category_name 
+  FROM categories c 
+  JOIN products p ON c.id = p.category_id 
+  GROUP BY c.id
+");
+
+$products_by_category = [];
+$all_products_query = $conn->query("
+  SELECT p.*, c.category_name 
+  FROM products p 
+  JOIN categories c ON p.category_id = c.id
+  ORDER BY p.id DESC
+");
+
+while ($product = $all_products_query->fetch_assoc()) {
+  $products_by_category[$product['category_id']][] = $product;
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -450,7 +470,7 @@ if ($user_id) {
     }
 
     .badge {
-      background-color: red !important;
+      background-color: #FFC43F !important;
       color: white;
       padding: 5px;
       font-size: 12px;
@@ -497,6 +517,52 @@ if ($user_id) {
       font-weight: 600;
       color: #333;
       margin: 0;
+    }
+
+    .badge-1 {
+      position: absolute;
+      background-color: #FFC43F;
+      left: 91%;
+      top: 10%;
+      color: white;
+      height: 78%;
+      width: 7%;
+      font-size: 15px;
+      padding-top: 5px;
+      text-align: center;
+    }
+
+    .d-link {
+      padding: 8px 10px !important;
+    }
+
+    .d-link:hover {
+      background-color: #FCF7EB;
+      padding: 8px 10px;
+      color: #FFC43F;
+    }
+
+    .wish-box img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+    }
+
+    .product-card {
+      position: relative;
+    }
+
+    .trash-icon {
+      display: none;
+    }
+
+    .product-card:hover .trash-icon {
+      display: block;
+      cursor: pointer;
+    }
+
+    .trash-icon i {
+      font-size: 20px;
     }
   </style>
 </head>
@@ -562,42 +628,38 @@ if ($user_id) {
     <div class="offcanvas-header justify-content-center">
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body ">
-      <div class="order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
-          <span class="badge bg-primary rounded-pill">3</span>
-        </h4>
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Growers cider</h6>
-              <small class="text-body-secondary">Brief description</small>
+    <div class="offcanvas-body">
+      <h4 class="d-flex justify-content-between align-items-center mb-3" style="color: #FFC43F; ">
+        <span class="">Your cart</span>
+        <span class="rounded-pill" style="padding: 5px; font-size:15px; color:white;  background-color:#FFC43F"><?= count($cart_items) ?></span>
+      </h4>
+      <ul class="list-group mb-3" id="cart-list">
+        <?php foreach ($cart_items as $item): ?>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="../admin/static/<?= htmlspecialchars($item['image']) ?>" alt="Product" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+              <div class="ms-5 me-3">
+                <h6 class="my-0"><?= htmlspecialchars($item['name']) ?></h6>
+                <small class="text-muted">$<?= number_format($item['price'], 2) ?></small>
+              </div>
             </div>
-            <span class="text-body-secondary">$12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Fresh grapes</h6>
-              <small class="text-body-secondary">Brief description</small>
+            <div class="text-end">
+              <a href="./php-files/remove_cart_item.php?user_id=<?= $user_id ?>&product_id=<?= $item['product_id'] ?>" class="btn btn-sm btn-outline-danger">&times;</a>
             </div>
-            <span class="text-body-secondary">$8</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Heinz tomato ketchup</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
-          </li>
-        </ul>
+        <?php endforeach; ?>
+        <li class="list-group-item d-flex justify-content-between">
+          <!-- <span>Total (USD)</span>
+          <strong>$<?= number_format($total_price, 2) ?></strong> -->
+        </li>
+      </ul>
 
-        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-      </div>
+      <?php if ($cart_items): ?>
+        <a href="./cart.php" class="w-100 btn btn-warning btn-lg mb-3">View Cart</a>
+      <?php else: ?>
+        <p class="text-center">Your cart is empty.</p>
+      <?php endif; ?>
+
     </div>
   </div>
 
@@ -624,14 +686,14 @@ if ($user_id) {
 
         <div class="col-sm-4 col-lg-3 text-center text-sm-start">
           <div class="main-logo">
-            <a href="./index.php">
+            <a href="../index.php">
               <img src="http://localhost/Foodmart/images/logo.png" alt="logo" class="img-fluid">
             </a>
           </div>
         </div>
 
         <div class="col-sm-12 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
-          <div class="search-bar row bg-light p-2 my-2 rounded-4">
+          <!-- <div class="search-bar row bg-light p-2 my-2 rounded-4">
             <div class="col-11 col-md-7">
               <form id="search-form" class="text-center" action="./php-files/search.php" method="get">
                 <input type="text" name="search" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products" />
@@ -644,7 +706,7 @@ if ($user_id) {
                 <path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
               </svg>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
@@ -665,13 +727,13 @@ if ($user_id) {
                   <p class="text-start" style="font-size: 13px;"><span class="" style="color: #FFC43F; font-size:16px">Welcome to foodmart</span><br>
                     Access account & manage orders</p>
                   <hr class="w-100 me-4 d-block">
-                  <a href="./php-files/my-profile.php" class="text-decoration-none mb-2 mt-3 d-block d-link">
+                  <a href="../php-files/my-profile.php" class="text-decoration-none mb-2 mt-3 d-block d-link">
                     <li style="font-size: 16px;"><i class="fa-solid fa-user me-3"></i>My Profile</li>
                   </a>
-                  <a href="" class="text-decoration-none mb-2 d-block d-link">
+                  <!-- <a href="" class="text-decoration-none mb-2 d-block d-link">
                     <li style="font-size: 16px;"><i class="fa-solid fa-bag-shopping me-3"></i>My Orders</li>
-                  </a>
-                  <a href="" class="text-decoration-none mb-3 d-block d-link">
+                  </a> -->
+                  <a href="../php-files/wishlist.php" class="text-decoration-none mb-3 d-block d-link">
                     <li style="font-size: 16px;"><i class="fa-solid fa-heart me-3"></i>My wishlist</li>
                   </a>
                   <hr class="w-100 mt-4">
@@ -697,7 +759,7 @@ if ($user_id) {
                                 </a>
                         </li> -->
 
-            <li class="position-relative">
+            <!-- <li class="position-relative">
               <a href="./wishlist.php" class="rounded-circle bg-light p-2 mx-1 position-relative text-black">
                 <svg width="24" height="24" viewBox="0 0 24 24">
                   <use xlink:href="#heart"></use>
@@ -722,7 +784,7 @@ if ($user_id) {
                   </span>
                 <?php endif; ?>
               </a>
-            </li>
+            </li> -->
             <li class="d-lg-none">
               <a href="#" class="rounded-circle bg-light p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
                 <svg width="24" height="24" viewBox="0 0 24 24">
@@ -741,8 +803,9 @@ if ($user_id) {
 
           <div class="cart text-end d-none d-lg-block dropdown">
             <button class="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-              <span class="fs-6 text-muted dropdown-toggle">Your Cart</span>
-              <span class="cart-total fs-5 fw-bold">$1290.00</span>
+              <!-- <span class="fs-6 text-muted dropdown-toggle">Your Cart</span> -->
+              <i class="fa-solid fa-cart-arrow-down text-gray-800" style="font-size: 25px;"></i>
+              <!-- <strong id="cart-total">$<?= number_format($total_price, 2) ?></strong> -->
             </button>
           </div>
         </div>
@@ -847,61 +910,10 @@ if ($user_id) {
             <img src="../admin/static/uploads/<?= htmlspecialchars($user_image) ?>" alt="User Image" class="profile-img">
             <h5><?= htmlspecialchars($user_name) ?></h5>
 
-            <style>
-              .badge-1 {
-                position: absolute;
-                background-color: #FFC43F;
-                left: 91%;
-                top: 10%;
-                color: white;
-                height: 78%;
-                width: 7%;
-                font-size: 15px;
-                padding-top: 5px;
-                text-align: center;
-              }
-
-              .d-link {
-                padding: 8px 10px !important;
-              }
-
-              .d-link:hover {
-                background-color: #FCF7EB;
-                padding: 8px 10px;
-                color: #FFC43F;
-              }
-
-              .wish-box img {
-                width: 100%;
-                max-height: 150px;
-                object-fit: contain;
-              }
-
-              /* Ensuring the trash icon only shows on hover */
-              .product-card {
-                position: relative;
-              }
-
-              .trash-icon {
-                display: none;
-                /* Hide the icon by default */
-              }
-
-              .product-card:hover .trash-icon {
-                display: block;
-                /* Show the icon on hover */
-                cursor: pointer;
-              }
-
-              .trash-icon i {
-                font-size: 20px;
-                /* Adjust the size of the trash icon */
-              }
-            </style>
 
             <div class="mt-4 d-grid gap-2 text-start">
               <a href="my-profile.php" class="nav-link d-link"><i class="fa-solid fa-user me-2"></i>My Profile</a>
-              <a href="my-orders.php" class="nav-link position-relative p-2 d-link">
+              <!-- <a href="my-orders.php" class="nav-link position-relative p-2 d-link">
                 <i class="fa-solid fa-box me-2"></i>My Orders
                 <?php
                 include './db.php';
@@ -919,22 +931,22 @@ if ($user_id) {
                 <?php if ($wishlist_count > 0): ?>
                   <span class="badge-1 rounded"><?= $wishlist_count ?></span>
                 <?php endif; ?>
-              </a>
+              </a> -->
               <a href="./wishlist.php" class="nav-link position-relative p-2 d-link">
                 <i class="fa-solid fa-heart me-2"></i> Wishlist
                 <?php if ($wishlist_count > 0): ?>
                   <span class="badge-1 rounded"><?= $wishlist_count ?></span>
                 <?php endif; ?>
               </a>
-              <a href="payment-methods.php" class="nav-link d-link"><i class="fa-solid fa-credit-card me-2"></i>Payment Methods</a>
-              <a href="account-settings.php" class="nav-link d-link"><i class="fa-solid fa-gear me-2"></i>Account Settings</a>
+              <!-- <a href="payment-methods.php" class="nav-link d-link"><i class="fa-solid fa-credit-card me-2"></i>Payment Methods</a>
+              <a href="account-settings.php" class="nav-link d-link"><i class="fa-solid fa-gear me-2"></i>Account Settings</a> -->
               <a href="logout.php" class="btn btn-warning mt-3"><i class="fa-solid fa-sign-out-alt me-2"></i>Log Out</a>
             </div>
           </div>
         </div>
 
 
-        
+
         <div class="col-md-8">
           <div class="profile-box">
             <h5 class="mb-4">My Wishlist</h5>
@@ -981,7 +993,7 @@ if ($user_id) {
                             </div>
                             <form method="POST" action="add-to-cart.php" class="mt-auto">
                               <input type="hidden" name="product_id" value="<?= $row['id'] ?>">
-                              <a href="../php-files/add_to_cart.php?product_id=<?= $product['id'] ?>&token=<?= $_SESSION['csrf_token'] ?>" class="btn btn-warning w-100 mt-3">Add to Cart</a>
+                              <a href="./add_to_cart.php?product_id=<?= $row['id'] ?>&token=<?= $_SESSION['csrf_token'] ?>" class="btn fw-bold btn-warning w-100 mt-3">Add to Cart</a>
                             </form>
                           </div>
                         </div>
